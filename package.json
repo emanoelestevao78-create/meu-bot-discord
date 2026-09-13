@@ -1,17 +1,13 @@
-
-
 {
-  "name": "discord-role-trade-bot",
+  "name": "meu-bot-discord",
   "version": "1.0.0",
-  "private": true,
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "deploy": "node deploy-commands.js"
+    "start": "node index.js"
   },
   "dependencies": {
-    "discord.js": "^14.27.0",
-    "dotenv": "^17.4.2",
+    "discord.js": "^14.14.1",
     "express": "^4.18.2"
   }
 }
