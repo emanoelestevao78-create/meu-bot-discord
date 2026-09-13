@@ -1,9 +1,3 @@
-import express from 'express';
-import "dotenv/config";
-
-const app = express();
-app.get('/', (req, res) => res.send('Bot online!'));
-app.listen(process.env.PORT || 3000);
 
 import "dotenv/config";
 import {
@@ -22,6 +16,8 @@ import {
 } from "discord.js";
 
 // Servidor Web para o UptimeRobot
+import express from "express";
+
 const app = express();
 app.use(express.static('public'));
 app.get('/download-zip', (req, res) => {
