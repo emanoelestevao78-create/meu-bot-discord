@@ -1,4 +1,4 @@
-
+9
 import "dotenv/config";
 import {
   ActionRowBuilder,
@@ -178,16 +178,16 @@ async function replyError(interaction, content) {
 }
 
 async function startTrade(interaction) {
-  if (!interaction.guild) {
-    await interaction.reply({
-      content: "Run `/trade` inside a server where the bot is installed.",
-      flags: MessageFlags.Ephemeral,
+  await interaction.deferReply({ flags: MessageFlags.Ephemeral });
+  
+   if (!interaction.guild) {
+    await interaction.editReply({
+      content: "Run `/trade` inside a server."
     });
     return;
-  }
+   }
 
-  await interaction.deferReply({ flags: MessageFlags.Ephemeral });
-
+  
   const proposer = await interaction.guild.members.fetch(interaction.user.id);
   const availableRoles = manageableRoles(proposer, interaction.guild);
 
